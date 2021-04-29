@@ -1,4 +1,4 @@
-# Basic ERC20 contract built with ink! for substrate and polkadot blockchain
+# Basic ERC20 contract built with ink! for substrate and polkadot
 
 ## Prerequisite
 
