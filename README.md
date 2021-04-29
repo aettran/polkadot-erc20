@@ -1,4 +1,4 @@
-# A sample ERC20 contract built with ink! for PolkaDot
+# Basic ERC20 contract built with ink! for substrate and polkadot blockchain
 
 ## Prerequisite
 
@@ -7,10 +7,9 @@
 
 ### Install ink! command line (CLI) utility
 
-As a prerequisite for the tool, need to install the `binaryen` package, which is used to optimize
-the WebAssembly bytecode of the contract.
+Need to install the `binaryen` package, which is used to optimize the WebAssembly bytecode of the contract.
 
-Many package managers have it available ‒ e.g. there is a package for [Debian/Ubuntu](https://tracker.debian.org/pkg/binaryen), [Homebrew](https://formulae.brew.sh/formula/binaryen) and [Arch Linux](https://archlinux.org/packages/community/x86_64/binaryen/). If there is no proper package you can download the source code from [github](https://github.com/WebAssembly/binaryen) and compile for the binary.
+Many package managers have it available ‒ e.g. there is a package for [Debian/Ubuntu](https://tracker.debian.org/pkg/binaryen), [Homebrew](https://formulae.brew.sh/formula/binaryen) and [Arch Linux](https://archlinux.org/packages/community/x86_64/binaryen/). If there is no proper package you can download the source code from github [binaryen](https://github.com/WebAssembly/binaryen) and compile for the binary.
 
 After you've installed the package execute:
 
