@@ -16,6 +16,15 @@ mod polkadot_erc20 {
         balances: ink_storage::collections::HashMap<AccountId, Balance>,
     }
 
+    #[ink(event)]
+    pub struct Transfer {
+        #[ink(topic)]
+        from: Option<AccountId>,
+        #[ink(topic)]
+        to: Option<AccountId>,
+        value: Balance,
+    }
+
     impl PolkadotErc20 {
         /// Constructor that initializes the contract with initial supply.
         #[ink(constructor)]
@@ -60,15 +69,17 @@ mod polkadot_erc20 {
             self.balances.insert(from, from_balance - value);
             let to_balance = self.balance_of(to);
             self.balances.insert(to, to_balance + value);
-            return true;
 
-            // ACTION: Get the balance for `from` and `to`
-            //   HINT: Use the `balance_of_or_zero` function to do this
-            // ACTION: If `from_balance` is less than `value`, return `false`
-            // ACTION: Insert new values for `from` and `to`
-            //         * from_balance - value
-            //         * to_balance + value
-            // ACTION: Return `true`
+            /// Trigger an event to report the transfer
+            self.env()
+                .emit_event(
+                    Transfer {
+                        from: Some(from),
+                        to: Some(to),
+                        value: value,
+                    });
+
+            return true;
         }
 
         /// A private function to retreive balance from an account
