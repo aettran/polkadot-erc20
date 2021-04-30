@@ -16,7 +16,6 @@ scale-info = { version = "0.6", default-features = false, features = ["derive"],
 
 [lib]
 name = "polkadot_erc20"
-path = "erc20_contract.rs"
 crate-type = [
 	# Used for normal contract Wasm blobs.
 	"cdylib",
